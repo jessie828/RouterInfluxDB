@@ -10,3 +10,4 @@ nice -n -19 $dir/router_temp.sh
 nice -n -19 $dir/router_assoclist.sh
 nice -n -19 $dir/router_top.sh
 nice -n -19 $dir/router_df.sh
+nice -n -19 $dir/router_uptime.sh

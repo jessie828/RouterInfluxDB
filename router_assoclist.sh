@@ -6,12 +6,12 @@ dir=`dirname $0`
 
 name="router_assoclist_24"
 columns="count"
-p1=`wl -i eth1 assoclist | awk '{print $2}' | wc -l`
+p1=`wl -i eth5 assoclist | awk '{print $2}' | wc -l`
 points="$p1"
 $dir/todb.sh "$name" "$columns" "$points"
 
 name="router_assoclist_50"
 columns="count"
-p1=`wl -i eth2 assoclist | awk '{print $2}' | wc -l`
+p1=`wl -i eth6 assoclist | awk '{print $2}' | wc -l`
 points="$p1"
 $dir/todb.sh "$name" "$columns" "$points"

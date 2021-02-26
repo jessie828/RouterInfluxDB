@@ -31,8 +31,8 @@ if [ -f $new ]; then
         }
     }' $new  | while read line; do
         points=$( echo $line | sed 's/^[^ ]* //g' )
-		interface=$( echo $line | sed 's/ .*$//g' )
-		$dir/todb.sh "$name" "$columns" "$points" "interface=$interface"
+        interface=$( echo $line | sed 's/ .*$//g' )
+        $dir/todb.sh "$name" "$columns" "$points" "interface=$interface"
     done
     mv $new $old
 fi

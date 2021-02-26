@@ -10,7 +10,7 @@ p1="$pingdest"
 p2=`ping -c1 -W1 $pingdest | grep 'seq=' | sed 's/.*time=\([0-9]*\.[0-9]*\).*$/\1/'`
 $dir/todb.sh "$name" "$columns" "$p2" "dst=$p1"
 
-pingdest="www.dn.se"
+pingdest="www.nu.nl"
 p1="$pingdest"
 p2=`ping -c1 -W1 $pingdest | grep 'seq=' | sed 's/.*time=\([0-9]*\.[0-9]*\).*$/\1/'`
 $dir/todb.sh "$name" "$columns" "$p2" "dst=$p1"

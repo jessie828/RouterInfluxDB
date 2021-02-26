@@ -1,0 +1,6 @@
+[INFLUXDB]
+influxdb_server = 127.0.0.1
+influxdb_port = 8086
+influxdb_user = user
+influxdb_password = password
+influxdb_databasename = router
