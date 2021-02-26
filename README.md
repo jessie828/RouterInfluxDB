@@ -2,10 +2,12 @@
 
 This comes from: https://www.instructables.com/id/How-to-graph-home-router-metrics/
 
-Edit todb.sh add InfluxDB settings
+First use the config.ini.example as a base for your influxDB configuration
+Edit config.ini add InfluxDB settings
 cron routerstats.sh:
 
-`echo 'cru a routerstats "* * * * * /jffs/scripts/routerstats/routerstats.sh"' >> /jffs/scripts/services-start`
-`echo 'cru a "routerstats+30" "* * * * * (sleep 30; /jffs/scripts/routerstats/routerstats.sh)"' >> /jffs/scripts/services-start`
+`cru a routerstats "* * * * * /jffs/scripts/routerstats/routerstats.sh"`
+`cru a "routerstats+30" "* * * * * (sleep 30; /jffs/scripts/routerstats/routerstats.sh)"`
+`cru -l > /jffs/scripts/services-start`
 
-Make sure you've enabled jffs scripting in AsusWRT merlin first.
+These scripts will work on the default ROM shipped with the Asus RT-AC86U
