@@ -2,12 +2,12 @@
 
 dir=`dirname $0`
 
-nice -n -19 $dir/router_cpu.sh
-nice -n -19 $dir/router_mem.sh
-nice -n -19 $dir/router_net.sh
-nice -n -19 $dir/router_ping_ext.sh
-nice -n -19 $dir/router_temp.sh
-nice -n -19 $dir/router_assoclist.sh
-nice -n -19 $dir/router_top.sh
-nice -n -19 $dir/router_df.sh
-nice -n -19 $dir/router_uptime.sh
+$dir/router_cpu.sh
+$dir/router_mem.sh
+$dir/router_net.sh
+$dir/router_ping_ext.sh
+$dir/router_temp.sh
+$dir/router_assoclist.sh
+$dir/router_top.sh
+$dir/router_df.sh
+$dir/router_uptime.sh
