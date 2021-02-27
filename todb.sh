@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 dbname=$(grep influxdb_databasename /jffs/scripts/config.ini | awk '{print $3}')
 dbhost=$(grep influxdb_server /jffs/scripts/config.ini | awk '{print $3}')
