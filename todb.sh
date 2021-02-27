@@ -1,10 +1,10 @@
 #/bin/sh
 
-dbname=$(grep influxdb_databasename config.ini | awk '{print $3}')
-dbhost=$(grep influxdb_server config.ini | awk '{print $3}')
-dbport=$(grep influxdb_port config.ini | awk '{print $3}')
-user=$(grep influxdb_user config.ini | awk '{print $3}')
-passwd=$(grep influxdb_password config.ini | awk '{print $3}')
+dbname=$(grep influxdb_databasename /jffs/scripts/config.ini | awk '{print $3}')
+dbhost=$(grep influxdb_server /jffs/scripts/config.ini | awk '{print $3}')
+dbport=$(grep influxdb_port /jffs/scripts/config.ini | awk '{print $3}')
+user=$(grep influxdb_user /jffs/scripts/config.ini | awk '{print $3}')
+passwd=$(grep influxdb_password /jffs/scripts/config.ini | awk '{print $3}')
 
 join() { local IFS="$1"; shift; echo "$*"; }
 
