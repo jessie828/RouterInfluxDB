@@ -20,13 +20,18 @@ name="router_assoclist_wired"
 columns="count"
 two=$(wl -i eth5 assoclist | awk '{print $2}' | tr '[A-Z]' '[a-z]')
 five=$(wl -i eth6 assoclist | awk '{print $2}' | tr '[A-Z]' '[a-z]')
-all=$(arp -n | grep -v 192.168.178.1 |  awk '{print $4}')
-for mac in ${all}
+for macip in $(arp -n | grep -v 192.168.178.1 |  grep -v incomplete | awk '{printf "%s_%s\n", $2, $4}')
 do
+    mac=$(echo ${macip} | sed 's/(.*)_\(.*\)/\1/');
+    ip=$(echo ${macip} | sed 's/(\(.*\))_.*/\1/g');
     echo ${two} ${five} | grep ${mac} >/dev/null
     if [ $? -eq 1 ]
     then
-        echo ${mac} >> /tmp/router_assoclist_wired.txt
+        ping -c1 -w1 ${ip} > /dev/null
+        if [ $? -eq 0 ]
+        then
+            echo ${mac} ${ip} >> /tmp/router_assoclist_wired.txt
+        fi
     fi
 done
 p1=$(cat /tmp/router_assoclist_wired.txt | wc -l)
